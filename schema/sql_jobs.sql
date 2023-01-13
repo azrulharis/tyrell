@@ -69,7 +69,7 @@ INNER JOIN job_types JobTypes ON (JobTypes.id = (Jobs.job_type_id) AND (JobTypes
 
 WHERE ((JobCategories.name LIKE '%キャビンアテンダント%'
 OR JobTypes.name LIKE '%キャビンアテンダント%'
-OR Jobs.name LIKE '%キャビンアテンダント%'
+OR Jobs.name LIKE '%会計士I%'
 OR Jobs.description LIKE '%キャビンアテンダント%'
 OR Jobs.detail LIKE '%キャビンアテンダント%'
 OR Jobs.business_skill LIKE '%キャビンアテンダント%'

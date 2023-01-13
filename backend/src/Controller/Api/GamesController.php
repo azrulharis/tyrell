@@ -19,12 +19,7 @@ class GamesController extends AppController {
     public function initialize() {
         parent::initialize();
         $this->loadComponent('RequestHandler'); 
-    }  
-
-    public function apiCheckConnection() {
-        $json['ok'] = true;
-        $this->jsonResponse($json);
-    }
+    }   
 
     /*
     *   The cards will be distribute when total player more than 0
@@ -71,6 +66,7 @@ class GamesController extends AppController {
                     $number = 1;
                     $error = 0;
                     for($i = 0; $i < count($distribute); $i++) {
+                        // array to comma separated string
                         $card = implode(',', $distribute[$i]);  
                         $players[] = [ 
                                 'name' => 'Player ' . $number,
@@ -111,20 +107,7 @@ class GamesController extends AppController {
         $this->jsonResponse($json);
     }
 
-    public function apiIndex() {  
-        /*
-        $cardConfig = Configure::read('cardConfig');
-
-        // make it random
-        shuffle($cardConfig);  
-        $total_player = 2;
-        $distribute = $this->divideArray($cardConfig, $total_player);
-
-        echo '<pre>';
-        print_r($distribute);
-
-        die();
-        */
+    public function apiIndex() {   
         $this->response = $this->response->withCharset('UTF-8');  
         $this->paginate = [
             'order' => [
